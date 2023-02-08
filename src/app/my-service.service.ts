@@ -1,5 +1,7 @@
 import { Injectable } from '@angular/core';
 import {INFORMATION} from "./MyType";
+import {BehaviorSubject, Observable} from "rxjs";
+
 
 @Injectable({
   providedIn: 'root'
@@ -13,4 +15,14 @@ export class MyServiceService {
   }
 
   constructor() { }
+
+  private FACTORY : BehaviorSubject<any> = new BehaviorSubject({});
+  public readonly TV : Observable<any> = this.FACTORY.asObservable();
+
+  public addData(arg : boolean, loginInfomation? : any) : void {
+    if (arg) {
+      this.FACTORY.next(loginInfomation)
+    }
+  }
 }
+

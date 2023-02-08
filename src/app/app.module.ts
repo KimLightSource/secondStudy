@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from './login/login.component';
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { myData } from "./MyType";
+import {MyServiceService} from "./my-service.service";
 
 
 
@@ -20,7 +20,7 @@ import { myData } from "./MyType";
     ReactiveFormsModule //반응형 폼 사용
   ],
   providers: [
-    {provide:"sending_name", useValue:myData}
+    MyServiceService
   ],
   bootstrap: [AppComponent]
 })
