@@ -6,5 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'secondStudy';
+  loginBool = true;
+  boardBool = false;
+
+  getEventThanks(event: any) {
+    console.log(event)
+    if(event == true ){
+      this.loginBool = false;
+      this.boardBool = true;
+
+    }
+  }
 }

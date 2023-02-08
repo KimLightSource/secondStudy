@@ -1,0 +1,10 @@
+<div>welcome</div>
+<input type="text" placeholder="id" [formControl]="id">
+<input type="text" placeholder="password" [formControl]="pwd">
+<button (click)="tryToLogin()">Login</button>
+<div>
+  <span *ngIf="pwd.hasError('minlength') || pwd.hasError('required')">비밀번호 {{pwd.value}}는 4자리 이상이어야 합니다.</span>
+</div>
+<div *ngIf="getMessage" [ngClass]="styleArray">
+  {{getMessage}}
+</div>
